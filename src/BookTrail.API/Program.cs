@@ -1,12 +1,18 @@
 using Asp.Versioning;
 using Asp.Versioning.Builder;
 using BookTrail.API;
+using BookTrail.API.Data;
 using BookTrail.API.Features;
-using Microsoft.AspNetCore.Builder;
+using BookTrail.API.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateSlimBuilder(args);
+
+// Add DbContext configuration
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.ConfigureHttpJsonOptions(options =>
 {
@@ -45,6 +51,13 @@ builder.Services.AddApiVersioning(options =>
 
 
 var app = builder.Build();
+
+// Create database and apply migrations on startup
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    context.Database.EnsureCreated();
+}
 
 // Define a set of supported API versions
 var apiVersionSet = app.NewApiVersionSet()
