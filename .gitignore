@@ -1,0 +1,26 @@
+# .NET build artifacts
+bin/
+obj/
+.vs/
+/packages/
+
+# User secrets
+secrets.json
+
+# Rider
+.idea/
+riderModule.iml
+/_ReSharper.Caches/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+*.log.*
+
+# ASP.NET logs
+logs/
+
+# dotenv
+.env*

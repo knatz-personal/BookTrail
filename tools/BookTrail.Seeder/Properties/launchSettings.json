@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BookTrail.Seeder": {
+      "commandName": "Project",
+      "commandLineArgs": "--reset"
+    }
+  }
+}

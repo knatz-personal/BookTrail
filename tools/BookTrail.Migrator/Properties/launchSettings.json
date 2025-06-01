@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "BookTrail.Migrator": {
+      "commandName": "Project",
+      "commandLineArgs": "update"
+    }
+  }
+}

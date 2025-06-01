@@ -1,0 +1,44 @@
+@BookTrailAPI_HostAddress = http://localhost:5176/api/v1
+
+### Get all todos (default paging)
+GET {{BookTrailAPI_HostAddress}}/todos
+Accept: application/json
+
+### Get todos with paging
+GET {{BookTrailAPI_HostAddress}}/todos?pageNumber=2&pageSize=5
+Accept: application/json
+
+### Get todos sorted by title ascending
+GET {{BookTrailAPI_HostAddress}}/todos?sortBy=title
+Accept: application/json
+
+### Get todos sorted by dueBy descending
+GET {{BookTrailAPI_HostAddress}}/todos?sortBy=dueBy&sortDescending=true
+Accept: application/json
+
+### Get todo by ID
+GET {{BookTrailAPI_HostAddress}}/todos/1
+Accept: application/json
+
+### Create new todo
+POST {{BookTrailAPI_HostAddress}}/todos
+Content-Type: application/json
+
+{
+  "title": "Test Todo",
+  "dueBy": "2025-04-20",
+  "isComplete": false
+}
+
+### Update todo
+PUT {{BookTrailAPI_HostAddress}}/todos/1
+Content-Type: application/json
+
+{
+  "title": "Updated Todo",
+  "dueBy": "2025-04-21",
+  "isComplete": true
+}
+
+### Delete todo
+DELETE {{BookTrailAPI_HostAddress}}/todos/1

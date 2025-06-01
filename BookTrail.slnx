@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/build/">
+    <File Path="build\migrate.bat" />
+    <File Path="build\seed.bat" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs\Create Migration.txt" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src\BookTrail.API\BookTrail.API.csproj" />
+    <Project Path="src\BookTrail.Data\BookTrail.Data.csproj" />
+  </Folder>
+  <Folder Name="/src/client/" />
+  <Folder Name="/src/shared/">
+    <Project Path="src\Shared.Extensions\Shared.Extensions.csproj" />
+    <Project Path="src\Shared.Utility\Shared.Utility.csproj" />
+  </Folder>
+  <Folder Name="/tools/">
+    <Project Path="tools\BookTrail.Migrator\BookTrail.Migrator.csproj" />
+    <Project Path="tools\BookTrail.Seeder\BookTrail.Seeder.csproj" />
+  </Folder>
+</Solution>
